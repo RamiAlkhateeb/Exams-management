@@ -9,8 +9,11 @@ import { CategoryComponent } from './category/category.component';
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
   ],
-  declarations: [AdminDashBoardComponent,CategoryComponent]
+  declarations: [AdminDashBoardComponent,CategoryComponent],
+  exports:[
+    AdminDashBoardComponent,CategoryComponent
+  ]
 })
 export class AdminModule { }

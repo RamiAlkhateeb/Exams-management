@@ -11,9 +11,22 @@ export class CategoryComponent implements OnInit {
 
   constructor(private categoryService : CategoryServiceService) { }
 
-  categories : Category[]
+  cc : Category
+  cats : Category[]
   ngOnInit() {
-    this.categoryService.getCategories().subscribe(a => this.categories = a)
+    this.categoryService.getCategories().subscribe(a => this.cats = a)
+  }
+
+  addcategory(newCat : string ){
+    debugger
+    let cat : Category = { Id : this.cats.length+1 , Name : newCat}
+    this.categoryService.postCategory(cat).subscribe(newc => this.cats.push(newc))
+  }
+
+  deletecategory(id : number){
+    debugger
+    this.categoryService.deleteCategory(id).subscribe()
+    //this.categoryService.getCategories().subscribe(a => this.cats = a)
   }
 
 }
