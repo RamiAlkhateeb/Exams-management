@@ -26,4 +26,19 @@ export class CategoryServiceService {
       "http://w36303-16/examwebapp/api/Categories", { headers: this.headers }
     );
   }
+
+  postCategory(category : Category) : Observable<Category>{
+    debugger
+    return this.http.post<Category>(
+      "http://w36303-16/examwebapp/api/Categories" , category , { headers: this.headers } 
+      )
+  }
+
+  deleteCategory(id : number) : Observable<Category>{
+    debugger
+    return this.http.delete<Category>(
+      "http://w36303-16/examwebapp/api/Categories/"+id  , { headers: this.headers } 
+      )
+  }
+
 }
