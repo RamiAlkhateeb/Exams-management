@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminDashBoardComponent } from './admin-dash-board/admin-dash-board.component';
 import { CategoryComponent } from './category/category.component';
+import { QuestionManagementComponent } from './question-management/question-management.component';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { CategoryComponent } from './category/category.component';
     CommonModule,
     AdminRoutingModule,
   ],
-  declarations: [AdminDashBoardComponent,CategoryComponent],
+  declarations: [AdminDashBoardComponent,CategoryComponent, QuestionManagementComponent],
   exports:[
     AdminDashBoardComponent,CategoryComponent
   ]

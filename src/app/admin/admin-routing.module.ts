@@ -7,6 +7,7 @@ const routes: Routes = [
   { path : 'admindashboard' , component : AdminDashBoardComponent 
 ,children : [
   { path : 'category' , component : CategoryComponent}
+  
 ]
  },
   
