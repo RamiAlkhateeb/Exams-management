@@ -3,24 +3,20 @@
   <form>
     <div class="form-group">
       <label for="name">Name</label>
-      <input #newCat type="text" class="form-control" id="name" required 
-         name="name"  >
+      <input #newCat type="text" class="form-control" id="name" required name="name">
     </div>
-
-    
 
     <button type="button" class="btn btn-default" (click)="addcategory(newCat.value)">add category</button>
 
   </form>
-</div> 
+</div>
 
 <ul>
   <li *ngFor="let cat of cats">
 
 
-    {{cat.Id}}   {{cat.Name}}
-     <button (click)="deletecategory(cat.Id)">delete </button> 
+    {{cat.Id}} {{cat.Name}}
+    <button (click)="deletecategory(cat.Id)">delete </button>
   </li>
 
 </ul>
-

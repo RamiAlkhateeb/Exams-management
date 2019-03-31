@@ -1,7 +1,23 @@
-<p>
-  admin-dash-board works!
-</p>
-<nav>
-  <a routerLink="category" routerLinkActive="active">categories</a>
-</nav>
-<router-outlet></router-outlet>
+
+<h1 style="text-align: center">Admin Dashboard</h1>
+<div class="row">
+  <div style="width: 1024px;">
+    <div style=" height: 50px">
+      <b> <a [routerLink]="['AddUser']">Add User</a></b>
+    </div>
+    <div style=" height: 50px">
+      <b> <a [routerLink]="['AddCategory']"> Add Category</a></b>
+    </div>
+  </div>
+  <div style=" height: 50px">
+    <b> <a [routerLink]="['AddQuastion']"> Add Quastion</a></b>
+  </div>
+  <div style=" height: 50px">
+    <b> <a [routerLink]="['AddExam']"> Add Exam</a></b>
+  </div>
+  <div style=" height: 50px">
+    <b><a [routerLink]="['ManageExam']"> Manage Exam</a></b>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+

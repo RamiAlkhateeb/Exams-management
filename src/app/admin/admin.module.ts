@@ -10,7 +10,7 @@ import { QuestionManagementComponent } from './question-management/question-mana
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule,
+    AdminRoutingModule, 
   ],
   declarations: [AdminDashBoardComponent,CategoryComponent, QuestionManagementComponent],
   exports:[
