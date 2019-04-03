@@ -1,6 +1,6 @@
-export class Answer {
+export class AnswerVM {
     Id : number
-    AnswerText : string
     QuestionId : number
+    AnswerText : string
     Mark : number
-}
+    }

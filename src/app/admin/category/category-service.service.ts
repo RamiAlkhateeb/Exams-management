@@ -27,6 +27,12 @@ export class CategoryServiceService {
     );
   }
 
+  getCategory(id : number): Observable<Category> {
+    return this.http.get<Category>(
+      "http://w36303-16/examwebapp/api/Categories"+id, { headers: this.headers }
+    );
+  }
+
   postCategory(category : Category) : Observable<Category>{
     debugger
     return this.http.post<Category>(
