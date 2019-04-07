@@ -57,7 +57,7 @@ export class QuestionManagementComponent implements OnInit {
 
     if(this.questions)
     {
-      this.QuestionId = this.questions.length+1
+      this.QuestionId = this.questions[this.questions.length-1].Id+1
     }
 
     let ans = this.profileForm.get('answers').value
@@ -71,6 +71,7 @@ export class QuestionManagementComponent implements OnInit {
 
     if(this.answers){
      id=  this.answers.length + 1
+     
   }
   else{
     id = 0
@@ -82,11 +83,11 @@ export class QuestionManagementComponent implements OnInit {
 
     this.questionService.postAnswer(newanswer).subscribe(newa => this.answers.push(newa))
 
-    this.questionService.getanswers(this.QuestionId).subscribe(ans => {
-      this.answers = ans
-      console.log("ans")
-      console.log(this.answers)
-    })
+    // this.questionService.getanswers(this.QuestionId).subscribe(ans => {
+    //   this.answers = ans
+    //   console.log("ans")
+    //   console.log(this.answers)
+    // })
     
     
   }
