@@ -46,7 +46,7 @@ export class QuestionService {
 
   getanswers(questionId : number){
     return this.http.get<Answer[]>(
-      "http://w36303-16/examwebapp/api/questions"+questionId , { headers: this.headers } 
+      "http://w36303-16/examwebapp/api/questions/"+questionId , { headers: this.headers } 
     )
   }
   

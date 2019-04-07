@@ -15,7 +15,12 @@ export class CategoryComponent implements OnInit {
   cc : Category
   cats : Category[]
   ngOnInit() {
-    this.categoryService.getCategories().subscribe(a => this.cats = a)
+    this.categoryService.getCategories().subscribe(a => {
+      this.cats = a;
+      console.log("categories")
+      console.log(this.cats)
+    });
+    
   }
 
   addcategory(newCat : string ){
