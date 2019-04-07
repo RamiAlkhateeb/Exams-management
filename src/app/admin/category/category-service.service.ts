@@ -22,6 +22,7 @@ export class CategoryServiceService {
 
 
   getCategories(): Observable<Category[]> {
+    //debugger
     return this.http.get<Category[]>(
       "http://w36303-16/examwebapp/api/Categories", { headers: this.headers }
     );

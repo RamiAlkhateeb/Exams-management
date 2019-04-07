@@ -1,99 +1,81 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>
+    Question Text :
+    <input type="text" formControlName="questionText" required>
+  </label>
+   
+  <br>
 
-<ul>
-  <li *ngFor="let cat of categories">
+<label>Question Category
+  <select [(ngModel)]="category" id="category" formControlName="category">
+   
+    <option *ngFor="let item of categories" [value]="item.Id">{{item.Name}}</option>
+  </select>
+</label>
 
+  <!-- <div formGroupName="address">
+    <h3>Address</h3>
 
-    {{cat.Id}} {{cat.Name}}
+    <label>
+      Street:
+      <input type="text" formControlName="street">
+    </label>
+
+    <label>
+      City:
+      <input type="text" formControlName="city">
+    </label>
     
-  </li>
+    <label>
+      State:
+      <input type="text" formControlName="state">
+    </label>
 
-</ul>
-
-
-<div class="container">
-  <div [hidden]="submitted">
-    <h1>Question Form</h1>
-    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-      <div class="form-group">
-        <label for="name">Question Text</label>
-        <input type="text" class="form-control" id="name"
-               required
-               [(ngModel)]="question.QuestionText" name="name"
-               #name="ngModel">
-        <div [hidden]="name.valid || name.pristine"
-             class="alert alert-danger">
-          text is required
-        </div>
-      </div>
-
-      
-
-      <div class="form-group">
-        <label for="power">Question Categories</label>
-        <select class="form-control" id="power"
-                required
-                [(ngModel)]="quesVM.CategoryId" name="power"
-                #power="ngModel">
-          <option *ngFor="let cat of categories" [value]="cat.Id">{{cat.Name}}</option>
-        </select>
-        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Category is required
-        </div>
-      </div>
-
-
-      <div class="container">
-        <h1>Answers</h1>
-        <form>
-          <div class="form-group">
-            <label for="name">first</label>
-            <input #firstAns type="text" class="form-control" id="fAns" required name="fAns">
-          </div>
-          <div class="form-group">
-            <label for="name">Second</label>
-            <input #firstAns type="text" class="form-control" id="fAns" required name="fAns">
-          </div>
-          <div class="form-group">
-            <label for="name">Third</label>
-            <input #firstAns type="text" class="form-control" id="fAns" name="fAns">
-          </div>
-          <div class="form-group">
-            <label for="name">Last</label>
-            <input #firstAns type="text" class="form-control" id="fAns" name="fAns">
-          </div>
-            
-        </form>
-      </div>
-
-
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-      
-
-
-     <!-- NOT SHOWN IN DOCS -->
-      <!-- <div>
-        <hr>
-        Name via form.controls = {{showFormControls(heroForm)}}
-      </div> -->
-     <!-- - -->
-    </form>
-  </div>
-
-  <!-- <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model.name }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Alter Ego</div>
-      <div class="col-xs-9">{{ model.alterEgo }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Power</div>
-      <div class="col-xs-9">{{ model.power }}</div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+    <label>
+      Zip Code:
+      <input type="text" formControlName="zip">
+    </label>
   </div> -->
-</div>
+
+  <!-- <div formArrayName="aliases">
+    <h3>Answers</h3> <button (click)="addAlias()">Add Answer</button>
+
+    <div *ngFor="let address of aliases.controls; let i=index">
+      <label>
+        Answer:
+        <div *ngIf="answer" > {{answer.AnswerText}} {{answer.Mark}} </div>
+        <input type="text" [formControlName]="i" >
+      </label>
+      <label>
+        Mark:
+        <input type="text" [formControlName]="i" >
+      </label>
+
+    </div>
+  </div> -->
+
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+
+<hr>
+
+
+<p>
+  Form Value: {{ profileForm.value | json }}
+</p>
+
+
+<p>
+  Form Status: {{ profileForm.status }}
+</p>
+
+<p>
+  <button (click)="updateProfile()">Add Question</button>
+</p>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
