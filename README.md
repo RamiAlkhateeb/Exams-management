@@ -1,3 +1,4 @@
+# this was for the Angular course project
 # Ng6proj
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
